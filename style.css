@@ -38,7 +38,9 @@ h1 {
     text-align: center;
     outline: 1px solid black;
 }
-div.buttons {
-    display:table-column;
-
+button {
+    display: block;
+    width: 100%;
+    margin: 20px;
+    font-size: 30px;
 }
