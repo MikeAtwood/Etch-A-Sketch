@@ -11,7 +11,7 @@ const sizeBtn = document.querySelector('.size')
 colorBtn.onclick = () => changeColor('black')
 clearBtn.onclick = () => clearBoard();
 eraserBtn.onclick = () => changeColor('white');
-rainbowBtn.onclick = () => randomColor();
+rainbowBtn.onclick = () => changeColor('rainbow');
 sizeBtn.onclick = () => getSize();
 
 // This creates our grid tables for users to draw
@@ -28,15 +28,15 @@ function makeRows(rows, cols) {
 };
 makeRows(16, 16)
 
-function randomColor(){
-    // code here
-}
 
 // Defines the default color
 function squareColor() {
-    this.style.backgroundColor = color;
-} 
-
+    if (color === 'rainbow') {
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+        this.style.backgroundColor = color;
+    }
+}
 
 // function the clearBtn calls to clear the board
 function clearBoard() {
@@ -45,7 +45,7 @@ function clearBoard() {
     cells.forEach((div) => div.style.backgroundColor = 'white')
 }
 // This allows the user to change the color using a button
-function changeColor(choice){
+function changeColor(choice) {
     color = choice;
 }
 
