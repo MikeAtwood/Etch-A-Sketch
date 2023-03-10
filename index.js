@@ -5,14 +5,12 @@ const colorBtn = document.querySelector('.colorBtn')
 const rainbowBtn = document.querySelector('.rainbow')
 const eraserBtn = document.querySelector('.eraser')
 const clearBtn = document.querySelector('.clear')
-const sizeBtn = document.querySelector('.size')
 
 
 colorBtn.onclick = () => changeColor('black')
 clearBtn.onclick = () => clearBoard();
 eraserBtn.onclick = () => changeColor('white');
 rainbowBtn.onclick = () => changeColor('rainbow');
-sizeBtn.onclick = () => getSize();
 
 // This creates our grid tables for users to draw
 function makeRows(rows, cols) {
@@ -51,11 +49,3 @@ function changeColor(choice) {
 
 // TODO
 // User input to change amount of square divs to work with
-function getSize() {
-    let choice = prompt("choose size")
-    if (choice <= 100 && choice >= 2) {
-        return makeRows(choice * choice)
-    } else {
-        return "Pick a size between 2-100"
-    }
-}
